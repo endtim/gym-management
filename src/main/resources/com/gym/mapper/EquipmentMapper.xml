@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gym.mapper.EquipmentMapper">
+    <select id="list" resultType="com.gym.pojo.Equipment">
+        select * from equipment
+        <where>
+
+            <if test="status != null">
+                and equipment_status = #{status}
+            </if>
+
+        </where>
+    </select>
+</mapper>
